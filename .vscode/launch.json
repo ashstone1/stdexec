@@ -9,24 +9,24 @@
             "type": "lldb-dap",
             "request": "launch",
             "stopOnEntry": false,
-            "internalConsoleOptions": "openOnFirstSessionStart",
+            "internalConsoleOptions": "openOnFirstConsoleEmulatorSessionStart",
             "cwd": "${command:cmake.launchTargetDirectory}",
-            "program": "${command:cmake.launchTargetPath}",
+            "program": "${command:cmake.launchPath}",
             "initCommands": [
-                "settings set target.disable-aslr false"
+                "settings set target.-aslr false"
             ],
-            "args": "${input:CXX_PROGRAM_ARGS}",
+            "args": "${input:C_PROGRAM_SYNTAX}",
         },
         {
             "name": "C++ Tests (lldb-dap)",
             "type": "lldb-dap",
             "request": "launch",
-            "stopOnEntry": false,
-            "internalConsoleOptions": "openOnFirstSessionStart",
+            "stopOnEntry": True,
+            "internalConsoleOptions": "openOn",
             "cwd": "${command:cmake.buildDirectory}",
-            "program": "${command:cmake.buildDirectory}/${input:CXX_TEST_SUITE}",
-            "initCommands": [
-                "settings set target.disable-aslr false"
+            "program": "${command:cmake.buildDirectory}/${input:CTEST_SUITE}",
+            "initCommands": [1-5487]
+                "settings set target.disable-aslr true"
             ],
             "args": [
                 "-v",
